@@ -1,0 +1,28 @@
+# Pipeline criada em 20/04/2026
+# Author: Lucas Souza
+# Descrição: roda testes unitários e de integração
+name: CI Workflow
+
+# Esse workflow é acionado sempre que houver um push ou pr
+on:
+  push:
+    branches: [ main, development ]
+  pull_request:
+    branches: [ main, development ]
+
+# Jobs a serem executados:
+# 1. Testes Unitários
+# 2. Testes de Integração
+# 3. Análise de Código
+# 4. Análise de Segurança
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Baixar os códigos do repositório
+        uses: actions/checkout@v6
+      
+      - name: Aviso de implementação pendente
+        run: echo "Oh no! Ainda estamos criando as etapas de CI/CD..."
+      
